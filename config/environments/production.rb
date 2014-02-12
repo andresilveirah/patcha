@@ -77,4 +77,7 @@ Patcha::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+  
+  # devise mailer
+  config.action_mailer.default_url_options = { :host => 'http://bordados.herokuapp.com' }
 end
