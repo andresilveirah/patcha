@@ -145,6 +145,24 @@ pt-BR:
       show: Mostrar
       edit: Editar
       destroy: Deletar
+    flash_messages:
+      model_added: "%{model} foi Adicionado"
+      model_removed: "%{model} foi Removido"
+      not_authorized: "Acesso não permitido!"
+      created: "%{model} criado com sucesso."
+      created_female: "%{model} criada com sucesso."
+      was_not_created: "%{model} não criado."
+      was_not_created_female: "%{model} não criada."
+      updated: "%{model} atualizado com sucesso."
+      updated_female: "%{model} atualizada com sucesso."
+      both_were_updated: "%{model1} e %{model2} atualizados com sucesso."
+      both_were_not_updated: "%{model1} e %{model2} não foram atualizados."
+      was_not_updated: "%{model} não foi atualizado."
+      was_not_updated_female: "%{model} não foi atualizada."
+      deleted: "%{model} deletado com sucesso."
+      deleted_female: "%{model} deletada com sucesso."
+      was_not_deleted: "%{model} não foi deletado."
+      was_not_deleted_female: "%{model} não foi deletada."
   number:
     currency:
       format:
@@ -230,5 +248,6 @@ pt-BR:
         width: Largura
         height: Altura
         price: Preço
+        size: Tamanho
     errors:
       <<: *errors

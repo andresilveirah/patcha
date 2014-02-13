@@ -1,33 +1,42 @@
-<h1><%= Patch.model_name %>: <small><%= @patch.code %></small></h1>
-<p>
-  <strong>Name:</strong>
-  <%= @patch.name %>
-</p>
+<h1><%= Patch.model_name %> <small><%= @patch.code %></small></h1>
+<div class="row">
+  <div class="col-sm-6">
+    <p>
+      <strong><%= t('activerecord.attributes.patch.name') %>:</strong>
+      <%= @patch.name %>
+    </p>
 
-<p>
-  <strong>Dots count:</strong>
-  <%= @patch.dots_count %>
-</p>
+    <p>
+      <strong><%= t('activerecord.attributes.patch.dots_count') %></strong>
+      <%= @patch.dots_count %>
+    </p>
 
-<p>
-  <strong>Colors count:</strong>
-  <%= @patch.colors_count %>
-</p>
+    <p>
+      <strong><%= t('activerecord.attributes.patch.colors_count') %>:</strong>
+      <%= @patch.colors_count %>
+    </p>
 
-<p>
-  <strong>Width:</strong>
-  <%= @patch.width %>
-</p>
+    <p>
+      <strong><%= t('activerecord.attributes.patch.width') %>:</strong>
+      <%= @patch.width %>
+    </p>
 
-<p>
-  <strong>Height:</strong>
-  <%= @patch.height %>
-</p>
+    <p>
+      <strong><%= t('activerecord.attributes.patch.height') %>:</strong>
+      <%= @patch.height %>
+    </p>
 
-<p>
-  <strong>Price:</strong>
-  <%= @patch.price %>
-</p>
-
-<%= link_to 'Edit', edit_patch_path(@patch) %> |
-<%= link_to 'Back', patches_path %>
+    <p>
+      <strong><%= t('activerecord.attributes.patch.price') %>:</strong>
+      <%= @patch.price %>
+    </p>
+  </div><!-- .col-sm-6 -->
+  <div class="col-sm-6">
+    <%= image_tag(@patch.image.picture.url(:medium), class: "img-thumbnail") if @patch.image %>
+  </div><!-- .col-sm-6 -->
+</div><!-- .row -->
+<br />
+<div class="panel-footer">
+  <%= link_to t('helpers.links.edit'), edit_patch_path(@patch), class: "btn btn-primary" %>
+</div>
+<%= link_to t('helpers.links.back'), patches_path, class: "btn btn-link" %>
