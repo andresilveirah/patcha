@@ -11,10 +11,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140212141723) do
+ActiveRecord::Schema.define(version: 20140212215613) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "images", force: true do |t|
+    t.string   "imageable_type"
+    t.integer  "imageable_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
+  end
+
+  add_index "images", ["imageable_id"], name: "index_images_on_imageable_id", using: :btree
+  add_index "images", ["imageable_type"], name: "index_images_on_imageable_type", using: :btree
+
+  create_table "patches", force: true do |t|
+    t.string   "name"
+    t.string   "code"
+    t.integer  "dots_count"
+    t.integer  "colors_count"
+    t.float    "width"
+    t.float    "height"
+    t.float    "price"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "patches", ["code"], name: "index_patches_on_code", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "name"

@@ -1,0 +1,66 @@
+<%= form_for(@patch, html: {role: "form", multipart: true}) do |f| %>
+  <% if @patch.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@patch.errors.count, "error") %> prohibited this patch from being saved:</h2>
+
+      <ul>
+      <% @patch.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="row">
+        <div class="form-group col-lg-6">
+          <%= f.label :name %><br>
+          <%= f.text_field :name, class: "form-control" %>
+        </div>
+        <div class="form-group col-lg-6">
+          <%= f.label :code %><br>
+          <%= f.text_field :code, class: "form-control" %>
+        </div>
+      </div><!-- .row -->
+      <div class="row">
+        <div class="form-group col-lg-6">
+          <%= f.label :dots_count %><br>
+          <%= f.number_field :dots_count, class: "form-control" %>
+        </div>
+        <div class="form-group col-lg-6">
+          <%= f.label :colors_count %><br>
+          <%= f.number_field :colors_count, class: "form-control" %>
+        </div>
+      </div><!-- .row -->
+      <div class="row">
+        <div class="form-group col-lg-6">
+          <%= f.label :width %><br>
+          <%= f.text_field :width, class: "form-control" %>
+        </div>
+        <div class="form-group col-lg-6">
+          <%= f.label :height %><br>
+          <%= f.text_field :height, class: "form-control" %>
+        </div>
+      </div><!-- .row -->
+      <div class="row">
+        <div class="form-group col-lg-6">
+          <%= f.label :price %><br>
+          <div class="input-group">
+            <span class="input-group-addon">$</span>
+            <%= f.text_field :price, class: "form-control" %>
+            <span class="input-group-addon">.00</span>
+          </div>
+        </div>
+      </div><!-- .row -->
+    </div><!-- .col-sm-6 -->
+    <div class="col-md-offset-1 col-sm-5">
+      <%= f.fields_for :image, @patch.image do |image_fields| %>
+        <%= render "picture_fields", {builder: image_fields} %>
+      <% end %>
+    </div><!-- .col-sm- -->
+  </div><!-- .row -->
+  
+  <div class="panel-footer">
+    <%= f.submit submit_text(@patch),class: "btn btn-primary" %>
+  </div>
+<% end %>

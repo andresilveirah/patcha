@@ -1,0 +1,33 @@
+<h1><%= Patch.model_name %>: <small><%= @patch.code %></small></h1>
+<p>
+  <strong>Name:</strong>
+  <%= @patch.name %>
+</p>
+
+<p>
+  <strong>Dots count:</strong>
+  <%= @patch.dots_count %>
+</p>
+
+<p>
+  <strong>Colors count:</strong>
+  <%= @patch.colors_count %>
+</p>
+
+<p>
+  <strong>Width:</strong>
+  <%= @patch.width %>
+</p>
+
+<p>
+  <strong>Height:</strong>
+  <%= @patch.height %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @patch.price %>
+</p>
+
+<%= link_to 'Edit', edit_patch_path(@patch) %> |
+<%= link_to 'Back', patches_path %>

@@ -1,0 +1,43 @@
+<h1><%= t('helpers.actions.listing_model', model: Patch.model_name.human(count: 2)) %></h1>
+
+<table class="table table-condensed table-striped table-hover">
+  <thead>
+    <tr>
+      <th></th>
+      <th><%= t('activerecord.attributes.patch.code') %></th>
+      <th><%= t('activerecord.attributes.patch.name') %></th>
+      <th><%= t('activerecord.attributes.patch.dots_count') %></th>
+      <th><%= t('activerecord.attributes.patch.colors_count') %></th>
+      <th><%= t('activerecord.attributes.patch.width') %></th>
+      <th><%= t('activerecord.attributes.patch.height') %></th>
+      <th><%= t('activerecord.attributes.patch.price') %></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @patches.each do |patch| %>
+      <tr>
+        <td><%= image_tag patch.image ? patch.image.picture.url(:thumb) : "http://placehold.it/70x70&text=Image"%></td>
+        <td><%= patch.code %></td>
+        <td><%= patch.name %></td>
+        <td><%= patch.dots_count %></td>
+        <td><%= patch.colors_count %></td>
+        <td><%= patch.width %></td>
+        <td><%= patch.height %></td>
+        <td><%= patch.price %></td>
+        <td>
+          <div class="btn-group btn-group-sm">
+            <%= link_to t('helpers.links.show'), patch, class: "btn btn-default" %>
+            <%= link_to t('helpers.links.edit'), edit_patch_path(patch), class: "btn btn-default" %>
+            <%= link_to t('helpers.links.destroy'), patch, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+          </div><!-- .btn-group -->
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to t('helpers.actions.new_model', model: Patch.model_name.human), new_patch_path, class: "btn btn-link" %>

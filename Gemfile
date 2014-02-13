@@ -37,6 +37,7 @@ end
 group :test, :development do
   gem 'rspec-rails'
   gem 'quiet_assets'
+  gem 'pry'
 end
 
 gem 'active_model_serializers'
