@@ -1,0 +1,13 @@
+<%= search_form_for @q, class: "search-form" do |f| %>
+<div class="form-group">
+  <div class="input-group">
+    <%= f.text_field :code_cont, class: 'form-control',
+    placeholder: t('placeholders.type_here_male') + " " + t('activerecord.attributes.patch.code') %>
+    <span class="input-group-btn">
+      <%= button_tag class: "btn btn-default" do %>
+        <span class="glyphicon glyphicon-search"></span>
+      <% end %>
+    </span>
+  </div><!-- .input-group -->
+</div><!-- .form-group -->
+<% end %>

@@ -1,4 +1,11 @@
-<h1><%= t('helpers.actions.listing_model', model: Patch.model_name.human(count: 2)) %></h1>
+<div class="row">
+  <div class="col-xs-12 col-md-8">
+    <h1><%= t('helpers.actions.listing_model', model: Patch.model_name.human(count: 2)) %></h1>
+  </div><!-- .col-lg-6 -->
+  <div class="col-xs-12 col-md-4">
+    <%= render "search" %>
+  </div><!-- .col-lg-6 -->
+</div><!-- .row -->
 
 <table class="table table-condensed table-striped table-hover">
   <thead>
@@ -18,20 +25,20 @@
 
   <tbody>
     <% @patches.each do |patch| %>
-      <tr class="clickable-row" data-link=<%= patch_url(patch) %>>
-        <td><%= link_to "<span class='glyphicon glyphicon-pencil'></span>".html_safe, edit_patch_path(patch), class: "btn btn-default btn-xs" %></td>
-        <td><%= image_tag patch.image ? patch.image.picture.url(:thumb) : "http://placehold.it/70x70&text=Image"%></td>
-        <td><%= patch.quantity %></td>
-        <td><%= patch.code %></td>
-        <td><%= patch.name %></td>
-        <td><%= patch.dots_count %></td>
-        <td><%= patch.colors_count %></td>
-        <td><%= patch.size %></td>
-        <td><%= patch.cost %></td>
-        <td>
-          <%= link_to "<span class='glyphicon glyphicon-remove'></span>".html_safe, patch, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-xs" %>
-        </td>
-      </tr>
+    <tr class="clickable-row" data-link=<%= patch_url(patch) %>>
+      <td><%= link_to "<span class='glyphicon glyphicon-pencil'></span>".html_safe, edit_patch_path(patch), class: "btn btn-default btn-xs" %></td>
+      <td><%= image_tag patch.image ? patch.image.picture.url(:thumb) : "http://placehold.it/70x70&text=Image"%></td>
+      <td><%= patch.quantity %></td>
+      <td><%= patch.code %></td>
+      <td><%= patch.name %></td>
+      <td><%= patch.dots_count %></td>
+      <td><%= patch.colors_count %></td>
+      <td><%= patch.size %></td>
+      <td><%= patch.cost %></td>
+      <td>
+        <%= link_to "<span class='glyphicon glyphicon-remove'></span>".html_safe, patch, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
     <% end %>
   </tbody>
 </table>

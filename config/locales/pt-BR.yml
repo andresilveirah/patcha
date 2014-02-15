@@ -1,4 +1,7 @@
 pt-BR:
+  placeholders:
+    type_here_male: Digite aqui o
+    type_here_female: Digite aqui a
   file-upload:
     select_file: Selecione Imagem
     change: Mudar

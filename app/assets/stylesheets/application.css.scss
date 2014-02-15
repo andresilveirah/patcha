@@ -14,6 +14,14 @@
 
 @import 'bootstrap';
 
+/*
+media query used on bootstrap 3
+@media(max-width:767px){}
+@media(min-width:768px){}
+@media(min-width:992px){}
+@media(min-width:1200px){}
+*/
+
 body {
   padding-top: 50px;
   padding-bottom: 20px;

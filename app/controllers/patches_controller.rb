@@ -5,7 +5,8 @@ class PatchesController < ApplicationController
   # GET /patches
   # GET /patches.json
   def index
-    @patches = Patch.all
+    @q = Patch.search(params[:q])
+    @patches = @q.result(distinct: true)
   end
 
   # GET /patches/1
