@@ -9,7 +9,7 @@ describe "patches/show" do
       :colors_count => 2,
       :width => 1.5,
       :height => 1.5,
-      :price => 1.5
+      :cost => 1.5
     ))
   end
 

@@ -9,7 +9,7 @@ describe "patches/new" do
       :colors_count => 1,
       :width => 1.5,
       :height => 1.5,
-      :price => 1.5
+      :cost => 1.5
     ).as_new_record)
   end
 
@@ -24,7 +24,7 @@ describe "patches/new" do
       assert_select "input#patch_colors_count[name=?]", "patch[colors_count]"
       assert_select "input#patch_width[name=?]", "patch[width]"
       assert_select "input#patch_height[name=?]", "patch[height]"
-      assert_select "input#patch_price[name=?]", "patch[price]"
+      assert_select "input#patch_cost[name=?]", "patch[cost]"
     end
   end
 end

@@ -1,4 +1,8 @@
 pt-BR:
+  file-upload:
+    select_file: Selecione Imagem
+    change: Mudar
+    remove: Remover
   date:
     abbr_day_names:
     - Dom
@@ -247,7 +251,8 @@ pt-BR:
         colors_count: Nº de Cores
         width: Largura
         height: Altura
-        price: Preço
+        cost: Custo
         size: Tamanho
+        quantity: Quantidade
     errors:
       <<: *errors

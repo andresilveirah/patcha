@@ -74,6 +74,6 @@ class PatchesController < ApplicationController
     def patch_params
       params.require(:patch).permit(
       :name, :code, :dots_count, :colors_count, :width,
-      :height, :price, image_attributes: [:_destroy, :picture])
+      :height, :cost, :quantity, image_attributes: [:_destroy, :picture])
     end
 end

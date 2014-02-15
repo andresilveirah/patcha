@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140212215613) do
+ActiveRecord::Schema.define(version: 20140215002635) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,9 +37,10 @@ ActiveRecord::Schema.define(version: 20140212215613) do
     t.integer  "colors_count"
     t.float    "width"
     t.float    "height"
-    t.float    "price"
+    t.float    "cost"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "quantity"
   end
 
   add_index "patches", ["code"], name: "index_patches_on_code", using: :btree

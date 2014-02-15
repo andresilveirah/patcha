@@ -1,0 +1,18 @@
+<div class="fileinput fileinput-new" data-provides="fileinput">
+  <div class="fileinput-new thumbnail" style="width: 200px; height: 200px;">
+    <% if image %>
+      <%= image_tag image.picture.url(:small) %>
+    <% else %>
+      <img src="http://placehold.it/200x200&text=Image">
+    <% end %>
+  </div>
+  <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"></div>
+  <div>
+    <span class="btn btn-default btn-file">
+      <span class="fileinput-new"><%= t('file-upload.select_file') %></span>
+      <span class="fileinput-exists"><%= t('file-upload.change') %></span>
+      <%= builder.file_field :picture %>
+    </span>
+    <a href="#" class="btn btn-danger fileinput-exists" data-dismiss="fileinput"><%= t('file-upload.remove') %></a>
+  </div>
+</div>

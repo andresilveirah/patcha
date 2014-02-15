@@ -44,20 +44,24 @@
       </div><!-- .row -->
       <div class="row">
         <div class="form-group col-lg-6">
-          <%= f.label :price %><br>
+          <%= f.label :cost %><br>
           <div class="input-group">
             <span class="input-group-addon">$</span>
-            <%= f.text_field :price, class: "form-control" %>
+            <%= f.text_field :cost, class: "form-control" %>
             <span class="input-group-addon">.00</span>
           </div>
+        </div>
+        <div class="form-group col-lg-6">
+          <%= f.label :quantity %><br>
+          <%= f.number_field :quantity, class: "form-control" %>
         </div>
       </div><!-- .row -->
     </div><!-- .col-sm-6 -->
     <div class="col-md-offset-1 col-sm-5">
       <%= f.fields_for :image, @patch.image do |image_fields| %>
-        <%= render "picture_fields", {builder: image_fields} %>
+        <%= render "image_fields", {builder: image_fields, image: @patch.image} %>
       <% end %>
-    </div><!-- .col-sm- -->
+    </div><!-- .col-sm-6 -->
   </div><!-- .row -->
   
   <div class="panel-footer">
