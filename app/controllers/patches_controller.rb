@@ -32,7 +32,9 @@ class PatchesController < ApplicationController
 
     respond_to do |format|
       if @patch.save
-        format.html { redirect_to @patch, notice: t('helpers.flash_messages.created', model: Patch.model_name.human) }
+        url_to_redirect = params[:commit] == I18n.t('helpers.actions.create_and_continue') ? new_patch_path : patch_path(@patch)
+        
+        format.html { redirect_to url_to_redirect, notice: t('helpers.flash_messages.created', model: Patch.model_name.human) }
         format.json { render action: 'show', status: :created, location: @patch }
       else
         format.html { render action: 'new' }

@@ -9,9 +9,12 @@
 * Add Gridview option to patch index
 * Add settings scaffold
 * Add authentication
-* Add "Create and Continue"
+--- Add "Create and Continue"
 * Add quantity_per_bastidor
 * Add validations on Patch for Name, Code, dots_count
 * Calculate the cost based on price per 1000 dots
 --- Add order by code DESC on Patch index
 --- Make the confirm messages more meaningful
+* Add uniqueness to patch code
+* Always save code in upper case
+* Verify how to sort via Code (string)

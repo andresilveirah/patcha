@@ -65,6 +65,7 @@
   </div><!-- .row -->
   
   <div class="panel-footer">
-    <%= f.submit submit_text(@patch),class: "btn btn-primary" %>
+    <%= f.submit submit_text(@patch),class: "btn btn-default" %>
+    <%= f.submit(t('helpers.actions.create_and_continue'), class: "btn btn-primary") if( action_name == "new" ) %>
   </div>
 <% end %>

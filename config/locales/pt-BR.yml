@@ -156,6 +156,7 @@ pt-BR:
       editing_model: Editando %{model}
       new_model: Novo %{model}
       new_model_female: Nova %{model}
+      create_and_continue: Criar e Continuar
     select:
       prompt: Por favor selecione
     submit:
