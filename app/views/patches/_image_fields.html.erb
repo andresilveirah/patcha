@@ -1,7 +1,7 @@
 <div class="fileinput fileinput-new" data-provides="fileinput">
   <div class="fileinput-new thumbnail" style="width: 200px; height: 200px;">
     <% if image && image.picture.blank? %>
-      <img src="http://placehold.it/200x200&text=Image">
+      <img src="http://placehold.it/200x200&text=<%= Patch.model_name.human %>">
     <% else %>
       <%= image_tag image.picture.url(:small) %>
     <% end %>

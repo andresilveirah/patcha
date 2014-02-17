@@ -32,7 +32,11 @@
     </p>
   </div><!-- .col-sm-6 -->
   <div class="col-sm-6">
-    <%= image_tag(@patch.image.picture.url(:medium), class: "img-thumbnail") if @patch.image %>
+    <% if @patch.image && @patch.image.picture %>
+      <%= image_tag(@patch.image.picture.url(:medium), class: "img-thumbnail") %>
+    <% else %>
+      <img src="http://placehold.it/300x300&text=<%= Patch.model_name.human %>">
+    <% end %>
   </div><!-- .col-sm-6 -->
 </div><!-- .row -->
 <br />

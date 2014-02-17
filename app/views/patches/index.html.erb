@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-xs-12 col-md-8">
-    <h1><%= t('helpers.actions.listing_model', model: Patch.model_name.human(count: 2)) %></h1>
+    <h1><%= t('helpers.actions.listing_model', model: Patch.model_name.human(count: 2)) %> <small>(<%= page_entries_info @patches %>)</small></h1>
   </div><!-- .col-lg-6 -->
   <div class="col-xs-12 col-md-4">
     <%= render "search" %>
@@ -25,7 +25,7 @@
   <tbody>
     <% @patches.each do |patch| %>
     <tr class="clickable-row" data-link=<%= patch_url(patch) %>>
-      <td><%= image_tag patch.image ? patch.image.picture.url(:thumb) : "http://placehold.it/70x70&text=Image"%></td>
+      <td><%= image_tag patch.image ? patch.image.picture.url(:thumb) : "http://placehold.it/70x70&text=#{Patch.model_name.human}"%></td>
       <td><%= patch.quantity %></td>
       <td><%= patch.code %></td>
       <td><%= patch.name %></td>
@@ -34,13 +34,15 @@
       <td><%= patch.size %></td>
       <td><%= number_to_currency(patch.cost) %></td>
       <td>
-        <%= link_to "<span class='glyphicon glyphicon-remove'></span>".html_safe, patch, method: :delete, data: { confirm: t('helpers.confirm') }, class: "btn btn-danger btn-xs" %>
+        <%= link_to "<span class='glyphicon glyphicon-remove'></span>".html_safe, patch, method: :delete, data: { confirm: t('helpers.confirm', model: Patch.model_name.human) }, class: "btn btn-danger btn-xs" %>
       </td>
     </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
+<%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
+
+<br />
 
 <%= link_to t('helpers.actions.new_model', model: Patch.model_name.human), new_patch_path, class: "btn btn-link" %>

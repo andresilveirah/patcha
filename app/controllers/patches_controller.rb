@@ -6,7 +6,7 @@ class PatchesController < ApplicationController
   # GET /patches.json
   def index
     @q = Patch.search(params[:q])
-    @patches = @q.result(distinct: true)
+    @patches = @q.result(distinct: true).order("code DESC").paginate(:page => params[:page], :per_page => 10)
   end
 
   # GET /patches/1
