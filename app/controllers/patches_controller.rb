@@ -32,7 +32,7 @@ class PatchesController < ApplicationController
 
     respond_to do |format|
       if @patch.save
-        format.html { redirect_to @patch, notice: 'Patch was successfully created.' }
+        format.html { redirect_to @patch, notice: t('helpers.flash_messages.created', model: Patch.model_name.human) }
         format.json { render action: 'show', status: :created, location: @patch }
       else
         format.html { render action: 'new' }
@@ -46,7 +46,7 @@ class PatchesController < ApplicationController
   def update
     respond_to do |format|
       if @patch.update(patch_params)
-        format.html { redirect_to @patch, notice: 'Patch was successfully updated.' }
+        format.html { redirect_to @patch, notice: t('helpers.flash_messages.updated', model: Patch.model_name.human) }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

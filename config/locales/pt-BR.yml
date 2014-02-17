@@ -152,6 +152,7 @@ pt-BR:
       show: Mostrar
       edit: Editar
       destroy: Deletar
+    confirm: Você tem certeza?
     flash_messages:
       model_added: "%{model} foi Adicionado"
       model_removed: "%{model} foi Removido"
