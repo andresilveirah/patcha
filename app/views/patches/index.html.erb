@@ -11,13 +11,13 @@
   <thead>
     <tr>
       <th></th>
-      <th><%= sort_link @q, :quantity, t('activerecord.attributes.patch.quantity') %></th>
       <th><%= sort_link @q, :code, t('activerecord.attributes.patch.code') %></th>
       <th><%= sort_link @q, :name, t('activerecord.attributes.patch.name') %></th>
       <th><%= sort_link @q, :dots_count, t('activerecord.attributes.patch.dots_count') %></th>
       <th><%= sort_link @q, :colors_count, t('activerecord.attributes.patch.colors_count') %></th>
       <th><%= sort_link @q, :size, t('activerecord.attributes.patch.size') %></th>
       <th><%= sort_link @q, :cost, t('activerecord.attributes.patch.cost') %></th>
+      <th><%= sort_link @q, :in_stock, t('activerecord.attributes.patch.in_stock') %></th>
       <th></th>
     </tr>
   </thead>
@@ -26,7 +26,7 @@
     <% @patches.each do |patch| %>
     <tr class="clickable-row" data-link=<%= patch_url(patch) %>>
       <td><%= image_tag patch.image ? patch.image.picture.url(:thumb) : "http://placehold.it/70x70&text=#{Patch.model_name.human}"%></td>
-      <td><%= patch.quantity %></td>
+      <td><%= patch.in_stock %></td>
       <td><%= patch.code %></td>
       <td><%= patch.name %></td>
       <td><%= patch.dots_count %></td>

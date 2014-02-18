@@ -3,6 +3,15 @@ class Patch < ActiveRecord::Base
   
   accepts_nested_attributes_for :image, allow_destroy: true, :reject_if => lambda { |image| image['picture'].nil? }
   
+  before_save :format_code
+  
+  validates_presence_of :name, :code
+  validates_uniqueness_of :code
+  
+  def format_code
+    code.upcase!
+  end
+  
   def size
     "#{width} x #{height}"
   end

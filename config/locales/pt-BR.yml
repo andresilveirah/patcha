@@ -274,6 +274,6 @@ pt-BR:
         height: Altura
         cost: Custo
         size: Tamanho
-        quantity: Quantidade
+        in_stock: Em Estoque
     errors:
       <<: *errors

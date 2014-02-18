@@ -1,4 +1,4 @@
-<%= form_for(@patch, html: {role: "form", multipart: true}) do |f| %>
+<%= form_for(@patch, html: {role: "form", multipart: true}, validate: true) do |f| %>
   <% if @patch.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@patch.errors.count, "error") %> prohibited this patch from being saved:</h2>
@@ -52,13 +52,13 @@
           </div>
         </div>
         <div class="form-group col-lg-6">
-          <%= f.label :quantity %><br>
-          <%= f.number_field :quantity, class: "form-control" %>
+          <%= f.label :in_stock %><br>
+          <%= f.number_field :in_stock, class: "form-control" %>
         </div>
       </div><!-- .row -->
     </div><!-- .col-sm-6 -->
     <div class="col-md-offset-1 col-sm-5">
-      <%= f.fields_for :image, @patch.image do |image_fields| %>
+      <%= f.fields_for :image, @patch.image || @patch.build_image do |image_fields| %>
         <%= render "image_fields", {builder: image_fields, image: @patch.image} %>
       <% end %>
     </div><!-- .col-sm-6 -->
