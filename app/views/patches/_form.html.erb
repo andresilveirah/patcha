@@ -1,15 +1,14 @@
 <%= form_for(@patch, html: {role: "form", multipart: true}, validate: true) do |f| %>
   <% if @patch.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@patch.errors.count, "error") %> prohibited this patch from being saved:</h2>
-
+    <div id="error_explanation" class="row">
+      <h4><%= "#{pluralize(@patch.errors.count, 'erro')} #{t('activerecord.errors.prohibited_from_being_saved', model: Patch.model_name.human)}"%></h4>
       <ul>
       <% @patch.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>
     </div>
-  <% end %>
+  <% end %><br />
   <div class="row">
     <div class="col-sm-6">
       <div class="row">

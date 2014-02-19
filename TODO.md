@@ -11,7 +11,7 @@
 * Add authentication
 --- Add "Create and Continue"
 * Add quantity_per_bastidor
-* Add validations on Patch for Name, Code, dots_count
+* Add validations on Patch for Name and Code
 * Calculate the cost based on price per 1000 dots
 --- Add order by code DESC on Patch index
 --- Make the confirm messages more meaningful

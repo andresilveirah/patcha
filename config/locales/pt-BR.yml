@@ -276,4 +276,6 @@ pt-BR:
         size: Tamanho
         in_stock: Em Estoque
     errors:
+      prohibited_from_being_saved: proíbem esse %{model} de ser salvo
+      prohibited_from_being_saved_female: proíbem essa %{model} de ser salva
       <<: *errors
