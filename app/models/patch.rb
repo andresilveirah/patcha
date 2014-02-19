@@ -8,6 +8,8 @@ class Patch < ActiveRecord::Base
   validates_presence_of :name, :code
   validates_uniqueness_of :code
   
+  acts_as_taggable_on :groups
+  
   def format_code
     code.upcase!
   end
