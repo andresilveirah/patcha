@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-xs-12 col-md-8">
-    <h1><%= t('helpers.actions.listing_model', model: Patch.model_name.human(count: 2)) %> <small>(<%= page_entries_info @patches %>)</small></h1>
+    <h1><%= t('helpers.actions.listing_model', model: Patch.model_name.human(count: 2)) %> <small>(<%= page_entries_info @patches %>)</small><%= link_to t('helpers.actions.new_model', model: Patch.model_name.human), new_patch_path, class: "btn btn-link" %></h1>
   </div><!-- .col-lg-6 -->
   <div class="col-xs-12 col-md-4">
     <%= render "search" %>
@@ -10,6 +10,7 @@
 <table class="table table-condensed table-striped table-hover">
   <thead>
     <tr>
+      <th></th>
       <th></th>
       <th><%= sort_link @q, :code, t('activerecord.attributes.patch.code') %></th>
       <th><%= sort_link @q, :name, t('activerecord.attributes.patch.name') %></th>
