@@ -11,14 +11,13 @@
   <thead>
     <tr>
       <th></th>
-      <th></th>
+      <th><%= sort_link @q, :in_stock, t('activerecord.attributes.patch.in_stock') %></th>
       <th><%= sort_link @q, :code, t('activerecord.attributes.patch.code') %></th>
       <th><%= sort_link @q, :name, t('activerecord.attributes.patch.name') %></th>
       <th><%= sort_link @q, :dots_count, t('activerecord.attributes.patch.dots_count') %></th>
       <th><%= sort_link @q, :colors_count, t('activerecord.attributes.patch.colors_count') %></th>
       <th><%= sort_link @q, :size, t('activerecord.attributes.patch.size') %></th>
       <th><%= sort_link @q, :cost, t('activerecord.attributes.patch.cost') %></th>
-      <th><%= sort_link @q, :in_stock, t('activerecord.attributes.patch.in_stock') %></th>
       <th></th>
     </tr>
   </thead>
