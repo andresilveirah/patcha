@@ -53,4 +53,3 @@ gem 'newrelic_rpm'
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
 gem 'aws-sdk'
-gem "ransack"
