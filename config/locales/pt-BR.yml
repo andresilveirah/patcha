@@ -255,6 +255,10 @@ pt-BR:
       long: ! '%d de %B de %Y, %H:%M'
       short: ! '%d de %B, %H:%M'
     pm: ''
+  forms:
+    patches:
+      groups:
+        press_tab_to_create: Pressione Tab para criar um grupo
   # remove these aliases after 'activemodel' and 'activerecord' namespaces are removed from Rails repository
   activemodel:
     errors:
@@ -275,6 +279,7 @@ pt-BR:
         cost: Custo
         size: Tamanho
         in_stock: Em Estoque
+        groups: Grupos
     errors:
       prohibited_from_being_saved: proíbem esse %{model} de ser salvo
       prohibited_from_being_saved_female: proíbem essa %{model} de ser salva

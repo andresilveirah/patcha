@@ -6,7 +6,7 @@ class Patch < ActiveRecord::Base
   before_save :format_code
   
   validates_presence_of :name, :code
-  validates_uniqueness_of :code
+  validates_uniqueness_of :code, case_sensitive: false
   
   acts_as_taggable_on :groups
   

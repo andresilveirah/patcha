@@ -35,6 +35,18 @@
       <strong><%= t('activerecord.attributes.patch.in_stock') %>:</strong>
       <%= @patch.in_stock %>
     </p>
+    
+    <p>
+      <strong><%= t('activerecord.attributes.patch.groups') %></strong>
+    </p>
+    <ul>
+      <% @patch.groups.each do |group| %>
+      <li>
+        <%= group %>
+      </li>
+      <% end %>
+    </ul>
+    
   </div><!-- .col-sm-6 -->
   <div class="col-sm-6">
     <% if @patch.image && @patch.image.picture %>

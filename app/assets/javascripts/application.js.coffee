@@ -15,6 +15,8 @@
 #= require turbolinks
 #= require bootstrap
 #= require bootstrap-fileupload
+#= require bootstrap-tokenfield
+#= require bootstrap-typeahead
 #= require_tree .
 
 $ ->
