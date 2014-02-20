@@ -57,7 +57,7 @@
       </div><!-- .row -->
       <div class="row">
         <div class="form-group col-lg-12">
-          <%= f.label :group_list, "Groups <small>(#{t('forms.patches.groups.press_tab_to_create')})</small>".html_safe %><br />
+          <%= f.label :group_list, "#{t('activerecord.attributes.patch.groups')} <small>(#{t('forms.patches.groups.press_tab_to_create')})</small>".html_safe %><br />
           <%= f.text_field :group_list, class: "form-control", data: {groups: ActsAsTaggableOn::Tag.all.map {|g| {id: g.id, value: g.name}}}%>
         </div>
       </div><!-- .row -->
@@ -71,6 +71,6 @@
   
   <div class="panel-footer">
     <%= f.submit submit_text(@patch),class: "btn btn-default" %>
-    <%= f.submit(t('helpers.actions.create_and_continue'), class: "btn btn-primary") if( action_name == "new" ) %>
+    <%= f.submit(t('helpers.actions.create_and_continue'), class: "btn btn-primary") if( ["new", "create"].include?(action_name)) %>
   </div>
 <% end %>

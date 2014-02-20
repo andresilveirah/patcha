@@ -19,5 +19,5 @@
 --- Always save code in upper case
 * Add numerical validations (greater than 0, integer, etc)
 * Review image upload...
-* Add act_as_taggable
-* Add "create and continue" EXCEPT for edit
+--- Add act_as_taggable
+--- Add "create and continue" EXCEPT for edit
