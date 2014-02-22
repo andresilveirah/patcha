@@ -23,6 +23,7 @@ class PatchesController < ApplicationController
   # GET /patches/1/edit
   def edit
     @patch.build_image if @patch.image.nil?
+    @setting = Setting.last
   end
 
   # POST /patches

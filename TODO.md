@@ -20,3 +20,4 @@
 * Review image upload...
 --- Add act_as_taggable
 --- Add "create and continue" EXCEPT for edit
+* add feedback when number fields are not a number
