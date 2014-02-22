@@ -21,5 +21,7 @@ module Patcha
     config.i18n.default_locale = "pt-BR"
     
     config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
+    
+    config.assets.initialize_on_precompile = true
   end
 end

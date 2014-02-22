@@ -1,0 +1,27 @@
+<%= form_for(@setting, html: {role: "form", class: "setting-form"}, validate: true) do |f| %>
+<% if @setting.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@setting.errors.count, "error") %> prohibited this setting from being saved:</h2>
+
+  <ul>
+    <% @setting.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<div class="row">
+ <div class="form-group col-sm-2">
+   <%= f.label :cost_per_thousand_points %>
+   <div class="input-group">
+     <span class="input-group-addon">$</span>
+     <%= f.text_field :cost_per_thousand_points, class: "form-control" %>
+     <span class="input-group-addon">.00</span>
+   </div>
+ </div>
+</div>
+<div class="panel-footer">
+  <%= f.submit submit_text(@setting), class: "btn btn-primary" %>
+</div>
+<% end %>

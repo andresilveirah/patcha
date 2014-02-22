@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140219010712) do
+ActiveRecord::Schema.define(version: 20140220174702) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,12 @@ ActiveRecord::Schema.define(version: 20140219010712) do
   end
 
   add_index "patches", ["code"], name: "index_patches_on_code", using: :btree
+
+  create_table "settings", force: true do |t|
+    t.float    "cost_per_thousand_points", default: 0.0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "taggings", force: true do |t|
     t.integer  "tag_id"

@@ -151,6 +151,7 @@ pt-BR:
         one: ! 'Não foi possível gravar %{model}: 1 erro'
         other: ! 'Não foi possível gravar %{model}: %{count} erros.'
   helpers:
+    warning: Cuidado
     actions:
       listing_model: Listando %{model}
       editing_model: Editando %{model}
@@ -256,9 +257,14 @@ pt-BR:
       short: ! '%d de %B, %H:%M'
     pm: ''
   forms:
+    settings:
+      cost_per_thousand_points:
+        tooltip: "Ao atualizar esse valor, o custo de <b>TODOS</b> os Bordados serão alterados."
     patches:
       groups:
         press_tab_to_create: Pressione Tab para criar um grupo
+      code: 
+        tooltip: Será salvo em letras minúsculas
   # remove these aliases after 'activemodel' and 'activerecord' namespaces are removed from Rails repository
   activemodel:
     errors:
@@ -268,6 +274,9 @@ pt-BR:
       patch:
         one: Bordado
         other: Bordados
+      setting:
+        one: Configuração
+        other: Configurações
     attributes:
       patch:
         name: Nome
@@ -280,6 +289,8 @@ pt-BR:
         size: Tamanho
         in_stock: Em Estoque
         groups: Grupos
+      setting:
+        cost_per_thousand_points: Custo por mil pontos
     errors:
       prohibited_from_being_saved: proíbem esse %{model} de ser salvo
       prohibited_from_being_saved_female: proíbem essa %{model} de ser salva

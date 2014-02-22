@@ -17,6 +17,8 @@
 #= require bootstrap-fileupload
 #= require bootstrap-tokenfield
 #= require bootstrap-typeahead
+#= require i18n
+#= require i18n/translations
 #= require_tree .
 
 $ ->

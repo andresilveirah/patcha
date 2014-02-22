@@ -6,7 +6,7 @@ class PatchesController < ApplicationController
   # GET /patches.json
   def index
     @q = Patch.search(params[:q])
-    @patches = @q.result(distinct: true).order("code DESC").paginate(:page => params[:page], :per_page => 10)
+    @patches = @q.result(distinct: true).order("code DESC").paginate(:page => params[:page], :per_page => 10).includes(:image)
   end
 
   # GET /patches/1
@@ -17,6 +17,7 @@ class PatchesController < ApplicationController
   # GET /patches/new
   def new
     @patch = Patch.new
+    @setting = Setting.last
   end
 
   # GET /patches/1/edit
