@@ -13,7 +13,7 @@ describe Setting do
       setting.save
       @patches.each do |patch|
         patch.reload
-        patch.cost.should eql(patch.dots_count * setting.cost_per_thousand_points)
+        patch.cost.should eql(patch.dots_count * setting.cost_per_thousand_points) / 1000
       end
     end
     

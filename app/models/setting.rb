@@ -4,7 +4,7 @@ class Setting < ActiveRecord::Base
   def update_patches_cost
     if cost_per_thousand_points_changed?
       Patch.where("dots_count IS NOT NULL").find_each do |patch|
-        patch.cost = patch.dots_count * cost_per_thousand_points
+        patch.cost = patch.dots_count * cost_per_thousand_points / 1000
         patch.save
       end
     end

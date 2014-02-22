@@ -9,7 +9,7 @@ ready = ->
   })
   
   $("input[name='patch[dots_count]']").on 'input', ->
-    $("input[name='patch[cost]']").val(this.value * this.dataset.price)
+    $("input[name='patch[cost]']").val(this.value * this.dataset.price / 1000)
   
   $("input[name='patch[cost]']").popover({
     'trigger':'focus',
