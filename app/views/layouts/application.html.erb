@@ -35,13 +35,13 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <li>
-              <%= link_to Patch.model_name.human(count: 2), patches_path %>
+              <%= link_to Patch.model_name.human(count: 2), patches_path, class: params[:controller] == "patches" ? "nav-active" : "" %>
             </li>
             <li>
-              <%= link_to Frame.model_name.human(count: 2), frames_path %>
+              <%= link_to Frame.model_name.human(count: 2), frames_path, class: params[:controller] == "frames" ? "nav-active" : "" %>
             </li>
             <li>
-              <%= link_to Setting.model_name.human(count: 2), setting_path(Setting.last) %>
+              <%= link_to Setting.model_name.human(count: 2), setting_path(Setting.last), class: params[:controller] == "settings" ? "nav-active" : "" %>
             </li>
           </ul>
         </div>
