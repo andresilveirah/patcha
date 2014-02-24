@@ -1,0 +1,16 @@
+<h1><%= Frame.model_name.human(count: 2) %></h1>
+
+<p>
+  <strong><%= t('activerecord.attributes.frame.size') %>:</strong>
+  <%= @frame.width %> X <%= @frame.height %>
+</p>
+
+<p>
+  <strong><%= t('activerecord.attributes.frame.maximum_dots') %>:</strong>
+  <%= @frame.maximum_dots %>
+</p>
+
+<div class="panel-footer">
+  <%= link_to t('helpers.links.edit'), edit_frame_path(@frame), class: "btn btn-primary" %>
+</div><!-- .panel-footer -->
+<%= link_to t('helpers.links.back'), root_path, class: "btn btn-link" %>

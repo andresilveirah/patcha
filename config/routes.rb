@@ -1,4 +1,6 @@
 Patcha::Application.routes.draw do
+  resources :frames
+
   resources :settings, only: [:show, :edit, :update]
 
   get "groups" => "groups#index"

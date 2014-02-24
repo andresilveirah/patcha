@@ -1,0 +1,27 @@
+<h1><%= t('helpers.actions.listing_model', model: Frame.model_name.human(count: 2)) %></h1>
+
+<table class='table table-condensed table-striped table-hover'>
+  <thead>
+    <tr>
+      <th><%= t('activerecord.attributes.frame.width') %></th>
+      <th><%= t('activerecord.attributes.frame.height') %></th>
+      <th><%= t('activerecord.attributes.frame.maximum_dots') %></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @frames.each do |frame| %>
+      <tr class='clickable-row' data-link=<%= frame_path(frame) %>>
+        <td><%= frame.width %></td>
+        <td><%= frame.height %></td>
+        <td><%= frame.maximum_dots %></td>
+        <td><%= link_to "<span class='glyphicon glyphicon-remove'></span>".html_safe, frame, method: :delete, data: { confirm: t('helpers.confirm', model: Frame.model_name.human) }, class: "btn btn-danger btn-xs" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to t('helpers.actions.new_model', model: Frame.model_name.human), new_frame_path, class: "btn btn-link" %>

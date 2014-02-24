@@ -11,10 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140220174702) do
+ActiveRecord::Schema.define(version: 20140224033057) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "frames", force: true do |t|
+    t.float    "width"
+    t.float    "height"
+    t.integer  "maximum_dots"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "images", force: true do |t|
     t.string   "imageable_type"

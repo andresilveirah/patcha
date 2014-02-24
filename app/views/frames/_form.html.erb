@@ -1,0 +1,39 @@
+<%= form_for(@frame) do |f| %>
+<% if @frame.errors.any? %>
+<div id="error_explanation" class="row">
+  <h4><%= "#{pluralize(@frame.errors.count, 'erro')} #{t('activerecord.errors.prohibited_from_being_saved', model: Frame.model_name.human)}"%></h4>
+  <ul>
+    <% @frame.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+<br>
+
+<div class="row">
+  <div class="col-sm-6">
+    <div class="row">
+      <div class="form-group col-lg-4">
+        <%= f.label :width, "#{t('activerecord.attributes.frame.width')} <small>(cm)</small>".html_safe %><br>
+        <%= f.text_field :width, class: "form-control" %>
+      </div>
+      <div class="form-group col-lg-4">
+        <%= f.label :height, "#{t('activerecord.attributes.frame.height')} <small>(cm)</small>".html_safe %><br>
+        <%= f.text_field :height, class: "form-control" %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-lg-8">
+        <%= f.label :maximum_dots, "#{t('activerecord.attributes.frame.maximum_dots')}" %><br>
+        <%= f.text_field :maximum_dots, class: "form-control" %>
+      </div>
+    </div>
+  </div><!-- .col-sm-6 -->
+</div><!-- .row -->
+
+  
+<div class="panel-footer">
+  <%= f.submit submit_text(@frame),class: "btn btn-primary" %>
+</div>
+<% end %>

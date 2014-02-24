@@ -277,6 +277,9 @@ pt-BR:
       setting:
         one: Configuração
         other: Configurações
+      frame:
+        one: Bastidor
+        other: Bastidores
     attributes:
       patch:
         name: Nome
@@ -291,6 +294,11 @@ pt-BR:
         groups: Grupos
       setting:
         cost_per_thousand_points: Custo por mil pontos
+      frame:
+        size: Tamanho
+        width: Largura
+        height: Altura
+        maximum_dots: Número máximo de pontos
     errors:
       prohibited_from_being_saved: proíbem esse %{model} de ser salvo
       prohibited_from_being_saved_female: proíbem essa %{model} de ser salva

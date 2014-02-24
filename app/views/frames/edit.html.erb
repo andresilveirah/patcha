@@ -1,0 +1,5 @@
+<h1><%= t('helpers.actions.editing_model', model: Frame.model_name.human(count: 2)) %></h1>
+
+<%= render 'form' %>
+
+<%= link_to t('helpers.links.back'), frame_path(@frame), class: "btn btn-link" %>
