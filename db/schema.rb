@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140224033057) do
+ActiveRecord::Schema.define(version: 20140225035051) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,6 +52,17 @@ ActiveRecord::Schema.define(version: 20140224033057) do
   end
 
   add_index "patches", ["code"], name: "index_patches_on_code", using: :btree
+
+  create_table "seam_rounds", force: true do |t|
+    t.integer  "patch_id"
+    t.integer  "frame_id"
+    t.integer  "patches_per_frame"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "seam_rounds", ["frame_id"], name: "index_seam_rounds_on_frame_id", using: :btree
+  add_index "seam_rounds", ["patch_id"], name: "index_seam_rounds_on_patch_id", using: :btree
 
   create_table "settings", force: true do |t|
     t.float    "cost_per_thousand_points", default: 0.0

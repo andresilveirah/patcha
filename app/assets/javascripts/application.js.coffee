@@ -19,6 +19,7 @@
 #= require bootstrap-typeahead
 #= require i18n
 #= require i18n/translations
+#= require jquery_nested_form
 #= require_tree .
 
 $ ->

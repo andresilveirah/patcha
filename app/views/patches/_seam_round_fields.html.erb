@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-lg-6">
+    <%= f.label :frame_id %><br>
+    <%= f.collection_select( :frame_id, Frame.all, :id, :size, {}, {class: "form-control"}) %>
+  </div><!-- .col-lg-5 -->
+  <div class="col-lg-4">
+    <%= f.label :patches_per_frame %><br>
+    <%= f.text_field :patches_per_frame, class: "form-control" %>
+  </div><!-- .col-lg-5 -->
+  <div class="col-lg-2">
+    <br>
+    <%= f.link_to_remove "<span class='glyphicon glyphicon-remove'></span>".html_safe, class: 'btn btn-danger btn-xs' %>
+  </div><!-- .col-lg-2 -->
+</div><!-- .row -->
+<br />

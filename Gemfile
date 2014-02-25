@@ -60,3 +60,4 @@ gem 'wkhtmltopdf-binary', '~> 0.9.9'
 gem 'aws-sdk', '~> 1.34'
 gem 'acts-as-taggable-on', '~> 3.0.1'
 gem 'i18n-js'
+gem "nested_form"

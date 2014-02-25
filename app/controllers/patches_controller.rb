@@ -7,6 +7,7 @@ class PatchesController < ApplicationController
   def index
     @q = Patch.search(params[:q])
     @patches = @q.result(distinct: true).order("code DESC").paginate(:page => params[:page], :per_page => 10).includes(:image)
+    @setting = Setting.last
   end
 
   # GET /patches/1
@@ -47,6 +48,7 @@ class PatchesController < ApplicationController
   # PATCH/PUT /patches/1
   # PATCH/PUT /patches/1.json
   def update
+    @setting = Setting.last
     respond_to do |format|
       if @patch.update(patch_params)
         format.html { redirect_to @patch, notice: t('helpers.flash_messages.updated', model: Patch.model_name.human) }
@@ -78,6 +80,6 @@ class PatchesController < ApplicationController
     def patch_params
       params.require(:patch).permit(
       :name, :code, :dots_count, :colors_count, :width,
-      :height, :cost, :in_stock, :group_list, image_attributes: [:_destroy, :picture])
+      :height, :cost, :in_stock, :group_list, image_attributes: [:_destroy, :picture], seam_rounds_attributes: [:id, :patches_per_frame, :_destroy, :frame_id])
     end
 end

@@ -158,6 +158,7 @@ pt-BR:
       new_model: Novo %{model}
       new_model_female: Nova %{model}
       create_and_continue: Criar e Continuar
+      add: Adicionar %{model}
     select:
       prompt: Por favor selecione
     submit:
@@ -280,6 +281,9 @@ pt-BR:
       frame:
         one: Bastidor
         other: Bastidores
+      seam_round: 
+        one: Bastidor
+        other: Bastidores
     attributes:
       patch:
         name: Nome
@@ -299,7 +303,13 @@ pt-BR:
         width: Largura
         height: Altura
         maximum_dots: Número máximo de pontos
+      seam_round:
+        frame_id: Bastidor
+        patch_id: Bordado
+        patches_per_frame: Bordados por Bastidor
     errors:
+      seam_round:
+        uniqueness: Esse Bastidor já foi usado nesse Bordado
       prohibited_from_being_saved: proíbem esse %{model} de ser salvo
       prohibited_from_being_saved_female: proíbem essa %{model} de ser salva
       <<: *errors
