@@ -1,0 +1,15 @@
+# encoding: UTF-8
+# pt-BR translations for Devise
+pt-BR:
+  devise:
+    views:
+      sessions:
+        please_sign_in: Por favor, faça login.
+        remember_me: Continuar logado após fechar o navegador
+        sign_in: Logar
+      links:
+        forgot_password: Esqueceu sua senha?
+        sign_in: Logar
+      passwords:
+        forgot_password: Esqueceu sua senha?
+        send_reset_instructions: Me enviar instruções de desbloqueio

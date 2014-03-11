@@ -1,4 +1,9 @@
 pt-BR:
+  views:
+    application:
+      nav:
+        hello: Olá
+        sign_out: Deslogar
   will_paginate:
     next_label: Próximos &#8594;
     page_entries_info:
@@ -284,7 +289,14 @@ pt-BR:
       seam_round: 
         one: Bastidor
         other: Bastidores
+      user:
+        one: Usuário
+        other: Usuários
     attributes:
+      user: 
+        name: Nome
+        email: Email
+        password: Senha
       patch:
         name: Nome
         code: Código

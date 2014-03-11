@@ -1,13 +1,13 @@
 <%= form_for(resource, :as => resource_name, :url => session_path(resource_name), html: {class: "form-signin"}) do |f| %>
-  <h2 class="form-signin-heading">Please sign in</h2>
-  <%= f.email_field :email, :autofocus => true, class: "form-control", placeholder: "Email", required: true %>
-  <%= f.password_field :password, class: "form-control", placeholder: "Password", required: true %>
+  <h2 class="form-signin-heading"><%= t('devise.views.sessions.please_sign_in') %></h2>
+  <%= f.email_field :email, :autofocus => true, class: "form-control", placeholder: t('activerecord.attributes.user.email'), required: true %>
+  <%= f.password_field :password, class: "form-control", placeholder: t('activerecord.attributes.user.password'), required: true %>
   <% if devise_mapping.rememberable? -%>
     <label class="checkbox">
-      <%= f.check_box :remember_me %>Remember me
+      <%= f.check_box :remember_me %><%= t('devise.views.sessions.remember_me') %>
     </label>
   <% end -%>
-  <%= f.submit "Sign in", class: "btn btn-lg btn-primary btn-block" %><br />
+  <%= f.submit t('devise.views.sessions.sign_in'), class: "btn btn-lg btn-primary btn-block" %><br />
   <%= render "devise/shared/links" %>
 <% end %>
 

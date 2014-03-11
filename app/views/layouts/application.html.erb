@@ -41,7 +41,10 @@
               <%= link_to Frame.model_name.human(count: 2), frames_path, class: params[:controller] == "frames" ? "nav-active" : "" %>
             </li>
             <li>
-              <%= link_to Setting.model_name.human(count: 2), setting_path(Setting.last), class: params[:controller] == "settings" ? "nav-active" : "" %>
+              <%= link_to "<span class='glyphicon glyphicon-cog'></span> #{Setting.model_name.human(count: 2)}".html_safe, setting_path(Setting.last), class: params[:controller] == "settings" ? "nav-active" : "" %>
+            </li>
+            <li>
+              <%= link_to "<span class='glyphicon glyphicon-off'></span> #{t('views.application.nav.sign_out')}".html_safe, destroy_user_session_path, method: :delete %>
             </li>
           </ul>
         </div>
