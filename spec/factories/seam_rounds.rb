@@ -2,8 +2,8 @@
 
 FactoryGirl.define do
   factory :seam_round do
-    patch nil
-    frame nil
+    patch 
+    frame 
     patches_per_frame 1
   end
 end

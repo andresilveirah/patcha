@@ -4,8 +4,7 @@ class Patch < ActiveRecord::Base
   
   accepts_nested_attributes_for :image, allow_destroy: true,
     :reject_if => lambda { |image| image['picture'].nil? }
-  accepts_nested_attributes_for :seam_rounds, allow_destroy: true,
-    :reject_if => lambda { |seam_round| seam_round['frame_id'].blank? }
+  accepts_nested_attributes_for :seam_rounds, allow_destroy: true
   
   before_save :format_code
   

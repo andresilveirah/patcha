@@ -310,6 +310,7 @@ pt-BR:
     errors:
       seam_round:
         uniqueness: Esse Bastidor já foi usado nesse Bordado
+        patches_per_frame: Número total de pontos (%{dots}) excede o permitido pelo bastidor
       prohibited_from_being_saved: proíbem esse %{model} de ser salvo
       prohibited_from_being_saved_female: proíbem essa %{model} de ser salva
       <<: *errors
